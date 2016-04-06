@@ -51,14 +51,15 @@ void generate_points(point_t* inputs, point_t* points, char from, char to)
       // apply changes
       points[i].x = inputs[i-1].x - delta_x;
       points[i].y = inputs[i-1].y + delta_y;
-      printf("pt%d: %.16lf, %.16lf\n", i+from, points[i].x, points[i].y);
     }
+    printf("pt%d: %.16lf, %.16lf\n", i+from, points[i].x, points[i].y);   
   }
 }
 
 
 int main()
 {
+  // declare input set
   point_t inputs[] = 
     {
       {2.1, 4.3},
@@ -83,21 +84,8 @@ int main()
       {-9.10663022812459, 15.691915599707357},
       {-9.847256291490558, 14.387510358126725}
     };
-  point_t* points = calloc(21, sizeof(point_t));
+  point_t* points = calloc(20, sizeof(point_t));
 
-  // declare initial points
-  points[0].x = 2.1000000000000000;
-  points[0].y = 4.3000000000000000;
-  points[1].x = 3.2618187593136714;
-  points[1].y = 5.2487766705114760;
-  points[2].x = 4.2295180907050410;
-  points[2].y = 6.3948822520460460;
-
-  // print starting points
-  printf("Initial Points (3 required):\n");
-  printf("pt1: %.16lf, %.16lf\n", points[0].x, points[0].y);
-  printf("pt2: %.16lf, %.16lf\n", points[1].x, points[1].y);
-  printf("pt3: %.16lf, %.16lf\n", points[2].x, points[2].y);
-
-  generate_points(inputs, points, 3, 21);  
+  // print calculated points
+  generate_points(inputs, points, 0, 21);  
 }
