@@ -84,7 +84,7 @@ int main()
       {-9.10663022812459, 15.691915599707357},
       {-9.847256291490558, 14.387510358126725}
     };
-  point_t* points = calloc(20, sizeof(point_t));
+  point_t* points = calloc(21, sizeof(point_t));
 
   // print calculated points
   generate_points(inputs, points, 0, 21);  
